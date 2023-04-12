@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('SonarQube analysis') {
       steps {
-        sh '''pipeline {
-    agent any
-
+        sh '''
     tools {
         // Install Maven and add it to the path.
         maven "maven"
@@ -20,11 +18,11 @@ pipeline {
                 }
             }
         }
-    }
-}
-'''
-        }
-      }
 
+
+'''
+      }
     }
+
   }
+}
